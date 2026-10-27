@@ -12,8 +12,10 @@ function MainLayout(){
 
 <div className="MainLayout">
 <Navbar />
-< Footer />
+
 <Sidebar />
+
+< Footer />
 </div>
 
     )

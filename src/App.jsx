@@ -1,13 +1,14 @@
-import Navbar from "./components/Navbar"
+import MainLayout from "./components/MainLayout"
 
 
 function App() {
  
 
   return (
-    <div>
-     <Navbar/>
-  </div>
+  
+    
+     <MainLayout />
+
   )
 }
 

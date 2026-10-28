@@ -194,3 +194,21 @@ cursor:pointer;
 
   border:2px solid black;
 }
+
+.lowStock{
+  background-color: red;
+  color:black;
+  padding:5px;
+  border-radius: 5px;
+  display:inline-block;
+   margin-left: 8px;
+}
+
+.InStock{
+  background-color: green;
+  color:black;
+  padding:4px;
+  border-radius: 5px;
+  display:inline-block;
+  margin-left: 8px;
+}

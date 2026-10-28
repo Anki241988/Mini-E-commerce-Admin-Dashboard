@@ -8,10 +8,11 @@ function productList() {
   return (
     <div>{productList.map((product)=>(
         
-        <div key={product.id}>
+        <div className='productContainer' key={product.id}>
             <img className='imgClass' src={product.images}/>
             <h3>{product.title}</h3>
             <p>Price: {product.price} €</p>
+            <button>Delete</button>
             </div>
     ))}
         </div>

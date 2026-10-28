@@ -189,3 +189,8 @@ cursor:pointer;
   width:200px;
   height:200px;
 }
+
+.productContainer{
+
+  border:2px solid black;
+}

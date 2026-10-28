@@ -9,6 +9,7 @@ function productList() {
     <div>{productList.map((product)=>(
         
         <div key={product.id}>
+            <img className='imgClass' src={product.images}/>
             <h3>{product.title}</h3>
             <p>Price: {product.price} €</p>
             </div>

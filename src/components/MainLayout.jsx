@@ -14,9 +14,9 @@ function MainLayout(){
 <Navbar />
 
 <Sidebar />
-
-< Footer />
 <ProductList />
+< Footer />
+
 
 </div>
 

@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import productData from '../assets/product.json'
+import ProductData from '../assets/product.json'
+import ProductCard from './productCard';
 
 
-function productList() {
+function ProductList() {
 
-    const[productList,setproductList]=useState(productData)
+    const[productList,setproductList]=useState(ProductData)
 
     
 
@@ -15,25 +16,21 @@ const handleDelete = (id) => {
 
     
   return (
-    <div>{productList.map((product)=>(
+
+    <div className='productList'>
+   {productList.map((product)=>(
         
-        <div className='productContainer' key={product.id}>
-            <img className='imgClass' src={product.images}/>
-            <h3>{product.title}</h3>
-            <p>Price: {product.price} €</p>
-            <button onClick={()=>handleDelete(product.id)}>Delete</button>
-
-         {product.stock <=10 &&  <span className='lowStock'>Low Stock  </span>}
-          
-
-               {product.stock >=11 && <span className='InStock'>In Stock </span>}
-           
-            </div>
+        <ProductCard 
+        key={product.id}
+        product={product}
+        onDelete={handleDelete}
+        />
 
             
     ))}
         </div>
+        
   );
 
 }
-export default productList;
+export default ProductList;

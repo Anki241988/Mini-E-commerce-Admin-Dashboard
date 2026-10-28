@@ -4,6 +4,7 @@ import Footer from "./Footer"
 import Sidebar from "./Sidebar"
 import ProductList from "./productList"
 
+
 function MainLayout(){
 
 
@@ -16,6 +17,7 @@ function MainLayout(){
 <Sidebar />
 <ProductList />
 < Footer />
+
 
 
 </div>

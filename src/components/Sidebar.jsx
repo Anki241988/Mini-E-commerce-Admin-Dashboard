@@ -1,9 +1,9 @@
 
-function Sidebar(){
+   function Sidebar(){
 
 
     return(
-<aside className="sidebar">
+<aside className="sidebar" >
 <h4>Menu</h4>
 <p>Dashboard</p>
 <p>Products</p>
@@ -21,4 +21,9 @@ function Sidebar(){
     )
 }
 
-export default Sidebar
+export default Sidebar 
+
+
+
+
+

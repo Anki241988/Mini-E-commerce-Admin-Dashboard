@@ -1,20 +1,23 @@
 import Navbar from "./Navbar";
-import Footer from "./Footer";
 import Sidebar from "./Sidebar";
-import ProductList from "./productList";
+import Footer from "./Footer";
 
-function MainLayout({ productList, onDelete }) {
+function MainLayout({ children }) {
   return (
     <div className="MainLayout">
-      <Navbar />
-      <Sidebar />
 
-      <ProductList
-        productList={productList}
-        onDelete={onDelete}
-      />
+      <Navbar />
+
+      <div className="contentBox">
+        <Sidebar />
+
+        <main className="mainContent">
+          {children}
+        </main>
+      </div>
 
       <Footer />
+
     </div>
   );
 }

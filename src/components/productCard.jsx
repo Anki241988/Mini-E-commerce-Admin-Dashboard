@@ -1,12 +1,30 @@
+import { useState } from "react";
 
 
+import { Link } from "react-router-dom";
   
       function ProductCard({product,onDelete}) {
+
+        const [imageBroken, setImageBroken] = useState(false);
   return (
   
-       <div className="productContainer flex flex-col items-center gap-2 bg-white rounded-xl p-4 min-w-0">
-            <img className='imgClass' src={product.images}/>
-            <h3>{product.title}</h3>
+       <div className={`productContainer flex flex-col items-center gap-1 bg-white rounded-xl p-3 w-full min-w-0 ${
+        imageBroken ? "order-last" : "order-first"
+      }`}>
+            <Link to={`/products/${product.id}`}>
+            <img
+  className="imgClass"
+  src={product.images[0]}
+  alt={product.title}
+  onError={() => {
+    console.log("Broken image:", product.title);
+    setImageBroken(true);
+  }}
+/>
+
+            
+  <h3 className="text-base font-semibold text-slate-800 mt-3">{product.title}</h3>
+</Link>
             <p>Price: {product.price} €</p>
       
       
@@ -27,7 +45,7 @@
         </span>
       }
 
-            
+         
     
         </div>
   )

@@ -17,7 +17,8 @@ const handleDelete = (id) => {
     
   return (
 
-    <div className='productList'>
+   // <div className='productList'> before tailwind
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 p-4">
    {productList.map((product)=>(
         
         <ProductCard 

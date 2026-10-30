@@ -6,9 +6,13 @@ import DashboardPage from "./pages/DashboardPage";
 import ItemDetailsPage from "./pages/ItemDetailsPage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ProductList from "./components/productList";
+import AddProductForm from "./components/AddProductForm";
 
 function App() {
   const [productList, setProductList] = useState(ProductData);
+
+  
 
   const handleDelete = (id) => {
     const newList = productList.filter(
@@ -26,6 +30,8 @@ function App() {
   <Route path="/products/:productId" element={<ItemDetailsPage  productList={productList} />} />
   <Route path="/about" element={<AboutPage />} />
   <Route path="*" element={<NotFoundPage />} />
+  <Route path="/AddProductForm" element={<AddProductForm />} />
+
 </Routes>
 
 

@@ -287,5 +287,74 @@ width: 140px;
   margin-left: 8px;
 }
 
+.AddProduct{
+
+  height:50px;
+  width:160px;
+  padding:10px;
+  background-color: black;
+  color:white;
+  text-align: center;
+  font-weight: bold;
+ cursor: pointer;
+ 
+ 
+}
+
+.adjust{
+
+  display: flex;
+  justify-content: space-between;
+}
 
 
+.formStyle{
+
+
+  display: flex;
+  flex-direction: column;
+align-items: center;
+gap:35px;
+margin-top: 60px;
+border:2px solid black ;
+width:60%;
+height:650px;
+margin-left: auto ;
+ margin-right: auto;
+
+}
+
+.labelStyle{
+
+  color:#FF7010;
+  font-weight: bold;
+  text-align: left;
+  font-size: large;
+}
+
+.submit{
+
+  border-radius: 15px;
+  background-color: #FF7010;
+  color:white;
+  display:inline-block;
+  padding:10px;
+  width:150px;
+  align-self: center;
+}
+
+.labelInputStyle{
+
+  display: flex;
+  justify-content: space-between;
+  gap:40px;
+  margin-top: 40px;
+  
+}
+
+.inputStyle{
+
+  border:2px solid #FF7010;
+  border-radius: 15px;
+  text-align: center;
+}

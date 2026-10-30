@@ -16,7 +16,7 @@ function ItemDetailsPage({ productList }) {
       <h1>{selectedProduct.title}</h1>
 
       <img
-        src={selectedProduct.images}
+        src={selectedProduct.images[0]}
         alt={selectedProduct.title}
       />
 

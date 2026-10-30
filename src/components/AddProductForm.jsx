@@ -1,5 +1,5 @@
 import { useState } from "react";
-function AddProductForm() {
+function AddProductForm({addProductToList}) {
 
     const[addData,setaddData]=useState({  title: "",
     price: "",
@@ -10,6 +10,16 @@ function AddProductForm() {
     function handleSummit(event){
 event.preventDefault();
 console.log(addData);
+
+addProductToList(addData)
+
+ setaddData({
+    title: "",
+    price: "",
+    stock: "",
+    description: "",
+    images: ""
+  });
     }
       
    

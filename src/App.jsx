@@ -22,6 +22,13 @@ function App() {
     setProductList(newList);
   };
 
+
+  function handleFormData(newProduct){
+  const updatedList = [...productList, newProduct];
+
+  setProductList(updatedList);
+  }
+
   return (
     <MainLayout>
     <Routes>
@@ -30,7 +37,7 @@ function App() {
   <Route path="/products/:productId" element={<ItemDetailsPage  productList={productList} />} />
   <Route path="/about" element={<AboutPage />} />
   <Route path="*" element={<NotFoundPage />} />
-  <Route path="/AddProductForm" element={<AddProductForm />} />
+  <Route path="/AddProductForm" element={<AddProductForm  addProductToList={handleFormData}/>} />
 
 </Routes>
 

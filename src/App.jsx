@@ -1,54 +1,73 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./components/MainLayout";
-import ProductData from "./assets/product.json"; 
+import ProductData from "./assets/product.json";
 import DashboardPage from "./pages/DashboardPage";
 import ItemDetailsPage from "./pages/ItemDetailsPage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ProductList from "./components/productList";
 import AddProductForm from "./components/AddProductForm";
+import EditProductPage from "./pages/EditProductPage";
 
 function App() {
   const [productList, setProductList] = useState(ProductData);
 
-  
-
   const handleDelete = (id) => {
-    const newList = productList.filter(
-      (product) => product.id !== id
-    );
+    const newList = productList.filter((product) => product.id !== id);
 
     setProductList(newList);
   };
 
+  function handleFormData(newProduct) {
+    const updatedList = [...productList, newProduct];
 
-  function handleFormData(newProduct){
-  const updatedList = [...productList, newProduct];
-
-  setProductList(updatedList);
+    setProductList(updatedList);
   }
 
+  function handleUpdate(updatedProduct) {
+    console.log("APP RECEIVED:", updatedProduct);
+
+    const updatedList = productList.map((product) => {
+      if (product.id === updatedProduct.id) {
+        return updatedProduct;
+      }
+
+      return product;
+    });
+
+    setProductList(updatedList);
+  }
   return (
     <MainLayout>
-    <Routes>
-  <Route path="/" element={<DashboardPage  productList={productList}
-      onDelete={handleDelete}/>} />
-  <Route path="/products/:productId" element={<ItemDetailsPage  productList={productList} />} />
-  <Route path="/about" element={<AboutPage />} />
-  <Route path="*" element={<NotFoundPage />} />
-  <Route path="/AddProductForm" element={<AddProductForm  addProductToList={handleFormData}/>} />
-
-</Routes>
-
-
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <DashboardPage productList={productList} onDelete={handleDelete} />
+          }
+        />
+        <Route
+          path="/products/:productId"
+          element={<ItemDetailsPage productList={productList} />}
+        />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+        <Route
+          path="/AddProductForm"
+          element={<AddProductForm addProductToList={handleFormData} />}
+        />
+        <Route
+          path="/products/:productId/edit"
+          element={
+            <EditProductPage
+              productList={productList}
+              onUpdate={handleUpdate}
+            />
+          }
+        />
+      </Routes>
     </MainLayout>
-     
-   
-
-
-
-
   );
 }
 

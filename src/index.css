@@ -327,3 +327,19 @@ p {
 .nav-right p {
   font-size: 1.5rem;
 }
+
+#detailsImage {
+  width: 20%;
+  height: 20%;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailsContainer p {
+  font-size: 1.2rem;
+}

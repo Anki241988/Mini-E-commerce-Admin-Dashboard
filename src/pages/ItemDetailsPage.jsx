@@ -12,10 +12,10 @@ function ItemDetailsPage({ productList }) {
   }
 
   return (
-    <div>
+    <div className="detailsContainer">
       <h1>{selectedProduct.title}</h1>
 
-      <img
+      <img id="detailsImage"
         src={selectedProduct.images[0]}
         alt={selectedProduct.title}
       />

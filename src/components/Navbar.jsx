@@ -11,13 +11,8 @@ function Navbar() {
         <img className='logo' src={logo} alt="logo" />
       </Link>
 
-      <div className="nav-right">
-        <Link to="/">Dashboard</Link>
-        <Link to="/about">About</Link>
+    
 
-       
-      </div>
- <img src={menu} alt="menu" className="menu-icon" />
     </div>
   );
 }
